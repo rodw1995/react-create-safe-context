@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 
-export default <A>() => {
-  const context = createContext<A | undefined>(undefined);
+export default <A>(defaultValue?: A) => {
+  const context = createContext<A | undefined>(defaultValue);
   const useSafeContext = () => {
     const value = useContext(context);
     if (!value) {
